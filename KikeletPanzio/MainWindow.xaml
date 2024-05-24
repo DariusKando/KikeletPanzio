@@ -1,0 +1,25 @@
+﻿<Window x:Class="KikeletPanzio.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KikeletPanzio"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Menu Grid.ColumnSpan="2">
+            <MenuItem Header="Regisztáció" Name="miReg" Click="miReg_Click"/>
+            <MenuItem Header="Szobafoglalás" Name="miRes" Click="miRes_Click"/>
+            <MenuItem Header="Statisztika" Name="miStat" Click="miStat_Click"/>
+        </Menu>
+        <DataGrid Name="dtgSzobak" Grid.Row="1" Grid.Column="1"/>
+    </Grid>
+</Window>
