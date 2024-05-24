@@ -16,7 +16,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Menu Grid.ColumnSpan="2">
-            <MenuItem Header="Regisztáció" Name="miReg" Click="miReg_Click"/>
+            <MenuItem Header="Regisztráció" Name="miReg" Click="miReg_Click"/>
             <MenuItem Header="Szobafoglalás" Name="miRes" Click="miRes_Click"/>
             <MenuItem Header="Statisztika" Name="miStat" Click="miStat_Click"/>
         </Menu>
