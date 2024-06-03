@@ -21,7 +21,6 @@ namespace KikeletPanzio
         public static List<Szobak> szobak = new List<Szobak>();
         public static List<Felhasznalok> felhasznalok = new List<Felhasznalok>();
         public static List<Foglalasok> foglalasok = new List<Foglalasok>();
-
         public MainWindow()
         {
             InitializeComponent();
@@ -52,7 +51,6 @@ namespace KikeletPanzio
             Regisztracio ujablak = new Regisztracio();
             ujablak.ShowDialog();
         }
-
         private void miRes_Click(object sender, RoutedEventArgs e)
         {
             if (felhasznalok.Count > 0)
@@ -67,7 +65,6 @@ namespace KikeletPanzio
                 MessageBox.Show("Legalább egy regisztráció szükséges.");
             }
         }
-
         private void miStat_Click(object sender, RoutedEventArgs e)
         {
             if (foglalasok.Count > 0)
@@ -80,13 +77,11 @@ namespace KikeletPanzio
                 MessageBox.Show("Legalább egy foglalás szükséges.");
             }
         }
-
         private void miRooms_Click(object sender, RoutedEventArgs e)
         {
             SzobakUI ujablak = new SzobakUI();
             ujablak.ShowDialog();
         }
-
         private void miReservs_Click(object sender, RoutedEventArgs e)
         {
             if (foglalasok.Count > 0)
