@@ -25,7 +25,7 @@ namespace KikeletPanzio
             {
                 cbxSzobak.Items.Add(item);
             }
-            foreach (var item in MainWindow.felhasznalok.Select(x => x.PersonName))
+            foreach (var item in MainWindow.felhasznalok.Select(x => x.AccID))
             {
                 cbxUgyfel.Items.Add(item);
             }
@@ -36,7 +36,20 @@ namespace KikeletPanzio
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.foglalasok.Add(new Foglalasok(int.Parse(cbxSzobak.SelectedItem.ToString()), cbxUgyfel.SelectedItem.ToString(), DateTime.Parse(dtpErkezes.SelectedDate.ToString()), DateTime.Parse(dtpTavozas.SelectedDate.ToString()), int.Parse(tbxFo.Text), MainWindow.szobak.Where(x => x.RoomNum == (int)cbxSzobak.SelectedItem).Select(x => x.RoomPrice).FirstOrDefault()* int.Parse(tbxFo.Text), cbxAllapot.SelectedItem.ToString()));
+            DateTime arriveTime = DateTime.Parse(dtpErkezes.SelectedDate.ToString());
+            DateTime leaveTime = DateTime.Parse(dtpTavozas.SelectedDate.ToString());
+            int personCount = int.Parse(tbxFo.Text);
+            MainWindow.foglalasok.Add(
+                new Foglalasok(
+                    int.Parse(cbxSzobak.SelectedItem.ToString()),
+                    cbxUgyfel.SelectedItem.ToString(),
+                    arriveTime,
+                    leaveTime,
+                    personCount,
+                    MainWindow.szobak.Where(x => x.RoomNum == (int)cbxSzobak.SelectedItem).Select(x => x.RoomPrice).FirstOrDefault() * personCount * (leaveTime - arriveTime).Days,
+                    cbxAllapot.SelectedItem.ToString()
+                )
+            );
             StreamWriter sw = new StreamWriter("foglalasok.txt");
             foreach (var item in MainWindow.foglalasok)
             {

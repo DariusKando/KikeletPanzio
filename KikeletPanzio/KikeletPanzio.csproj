@@ -60,6 +60,9 @@
       <DependentUpon>Foglalas.xaml</DependentUpon>
     </Compile>
     <Compile Include="Foglalasok.cs" />
+    <Compile Include="FoglalasUI.xaml.cs">
+      <DependentUpon>FoglalasUI.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Regisztracio.xaml.cs">
       <DependentUpon>Regisztracio.xaml</DependentUpon>
     </Compile>
@@ -71,6 +74,10 @@
       <DependentUpon>SzobakUI.xaml</DependentUpon>
     </Compile>
     <Page Include="Foglalas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FoglalasUI.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

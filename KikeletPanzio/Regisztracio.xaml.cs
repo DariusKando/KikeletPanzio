@@ -27,8 +27,8 @@ namespace KikeletPanzio
             if (CheckIfCorrectInputs() && idBuilder() != string.Empty)
             {
                 bool isVIP = (bool)rbtnIsVIP.IsChecked ? true : false;
-                MainWindow.felhasznalok.Add(new Felhasznalok(idBuilder(), tbxName.Text, dtpBirth.SelectedDate.Value, tbxEmail.Text, isVIP));
-                MessageBox.Show($"{idBuilder()}");
+                string id = idBuilder();
+                MainWindow.felhasznalok.Add(new Felhasznalok(id, tbxName.Text, dtpBirth.SelectedDate.Value, tbxEmail.Text, isVIP));
                 this.Close();
             }
             else
@@ -44,13 +44,17 @@ namespace KikeletPanzio
         private string idBuilder()
         {
             string id = $"{tbxName.Text}{DateTime.Now.Year}{DateTime.Now.Month}{DateTime.Now.Day}";
+            if(MainWindow.felhasznalok.Count < 1)
+            {
+                return id;
+            }
             if (!MainWindow.felhasznalok.Select(x => x.AccID).Contains(id))
             {
                 return id;
             }
             else
             {
-                MessageBox.Show("ID generation failed. Duplicate ID found.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("ID generation failed. Duplicate ID found.");
                 return string.Empty;
             }
         }

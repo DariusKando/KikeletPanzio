@@ -61,7 +61,6 @@ namespace KikeletPanzio
                 ujablak.ShowDialog();
 
                 File.WriteAllLines("felhasznalok.txt", felhasznalok.Select(x => x.ToString()));
-                dtgSzobak.ItemsSource = felhasznalok;
             }
             else
             {
@@ -86,6 +85,19 @@ namespace KikeletPanzio
         {
             SzobakUI ujablak = new SzobakUI();
             ujablak.ShowDialog();
+        }
+
+        private void miReservs_Click(object sender, RoutedEventArgs e)
+        {
+            if (foglalasok.Count > 0)
+            {
+                FoglalasUI ujablak = new FoglalasUI();
+                ujablak.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Legalább egy foglalás szükséges.");
+            }
         }
     }
 }

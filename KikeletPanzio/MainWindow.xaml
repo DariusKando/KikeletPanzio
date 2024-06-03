@@ -20,6 +20,7 @@
             <MenuItem Header="Szobafoglalás" Name="miRes" Click="miRes_Click"/>
             <MenuItem Header="Statisztika" Name="miStat" Click="miStat_Click"/>
             <MenuItem Header="Szobák" Name="miRooms" Click="miRooms_Click"/>
+            <MenuItem Header="Foglalások" Name="miReservs" Click="miReservs_Click"/>
         </Menu>
         <DataGrid Name="dtgSzobak" Grid.Row="1" Grid.Column="1"/>
     </Grid>
