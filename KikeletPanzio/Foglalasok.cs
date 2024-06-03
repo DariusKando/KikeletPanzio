@@ -44,7 +44,7 @@ namespace KikeletPanzio
         }
         public override string ToString()
         {
-            return $"{RoomNum};{PersonCount};{ArriveTime};{LeaveTime};{personCount};{priceSum};{resState}";
+            return $"{RoomNum};{PersonCount};{ArriveTime};{LeaveTime};{PersonCount};{PriceSum};{ResState}";
         }
     }
 }

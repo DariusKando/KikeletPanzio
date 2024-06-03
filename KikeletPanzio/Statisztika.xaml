@@ -7,6 +7,19 @@
         mc:Ignorable="d"
         Title="Statisztika" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <RadioButton Name="rbtnBevetel" Content="Bevétel" Checked="rbtnBevetel_Checked"/>
+            <RadioButton Name="rbtnLegKiadottSzoba" Content="Legtöbbet kiadott szoba" Checked="rbtnLegKiadottSzoba_Checked"/>
+            <RadioButton Name="rbtnVendegLista" Content="Viszajáró vendégek listája" Checked="rbtnVendegLista_Checked"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Name="spMain">
+            
+        </StackPanel>
     </Grid>
 </Window>

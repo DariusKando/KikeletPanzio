@@ -81,5 +81,11 @@ namespace KikeletPanzio
                 MessageBox.Show("Legalább egy foglalás szükséges.");
             }
         }
+
+        private void miRooms_Click(object sender, RoutedEventArgs e)
+        {
+            SzobakUI ujablak = new SzobakUI();
+            ujablak.ShowDialog();
+        }
     }
 }
